@@ -1,0 +1,16 @@
+
+# rabbitmq
+spring:
+  rabbitmq:
+    host: 192.168.10.101
+    username: username
+    password: password
+  cloud:
+    function:
+      definition: registerEvent;loginEvent
+    stream:
+      bindings:
+        registerEvent-in-0:
+          destination: register_out
+        loginEvent-in-0:
+          destination: login_out
